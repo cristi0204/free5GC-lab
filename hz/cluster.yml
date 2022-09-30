@@ -3,7 +3,23 @@
 nodes:
 - address: 10.200.1.103
   port: "22"
-  internal_address: 188.40.22.59
+  internal_address: 10.200.1.103
+  role:
+  - controlplane
+  - worker
+  - etcd
+  hostname_override: ""
+  user: root
+  docker_socket: /var/run/docker.sock
+  ssh_key: ""
+  ssh_key_path: ~/.ssh/id_rsa
+  ssh_cert: ""
+  ssh_cert_path: ""
+  labels: {}
+  taints: []
+- address: 10.200.1.107
+  port: "22"
+  internal_address: 10.200.1.107
   role:
   - controlplane
   - worker
