@@ -1,9 +1,9 @@
 # If you intended to deploy Kubernetes in an air-gapped environment,
 # please consult the documentation on how to configure custom RKE images.
 nodes:
-- address: 10.200.1.103
+- address: aos3
   port: "22"
-  internal_address: 10.200.1.103
+  internal_address: aos3
   role:
   - controlplane
   - worker
@@ -17,9 +17,9 @@ nodes:
   ssh_cert_path: ""
   labels: {}
   taints: []
-- address: 10.200.1.107
+- address: aos7
   port: "22"
-  internal_address: 10.200.1.107
+  internal_address: aos7
   role:
   - controlplane
   - worker
