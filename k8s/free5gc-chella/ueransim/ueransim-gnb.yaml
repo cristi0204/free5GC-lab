@@ -14,7 +14,7 @@ data:
     gtpIp: 127.0.0.1    # gNB's local IP address for N3 Interface (Usually same with local IP)
     # List of AMF address information
     amfConfigs:
-      - address: 10.200.1.103
+      - address: free5gc-amf-svc.5gc
         port: 38412
     # List of supported S-NSSAIs by this gNB
     slices:
