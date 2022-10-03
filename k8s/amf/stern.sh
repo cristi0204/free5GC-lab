@@ -1,1 +1,1 @@
-stern -n alpha -l app=free5gc-amf
+stern -n 5gc -l app=free5gc-amf
