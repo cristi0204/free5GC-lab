@@ -1,6 +1,6 @@
 apt-get install vlan
 sudo modprobe 8021q
-cat vsconfig.yaml >>/etc/netplan/01-netcfg.yaml
+cat 72.vswitch.config.yaml >>/etc/netplan/01-netcfg.yaml
 sudo /lib/netplan/generate
 sudo systemctl restart systemd-networkd
 sleep 1
