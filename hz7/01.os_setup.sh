@@ -7,7 +7,9 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --yes --dearm
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update -y
 sudo apt-get upgrade -y
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y install apt-transport-https ca-certificates curl software-properties-common socat docker-ce="5:20.10.9~3-0~ubuntu-focal" docker-ce-cli="5:20.10.9~3-0~ubuntu-focal" containerd.io open-iscsi lvm2 git
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y install build-essential linux-headers-$(uname -r) apt-transport-https ca-certificates curl software-properties-common socat docker-ce="5:20.10.9~3-0~ubuntu-focal" docker-ce-cli="5:20.10.9~3-0~ubuntu-focal" containerd.io open-iscsi lvm2 git
+
+
 
 # DOCKER COMPOSE
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.7.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
