@@ -1,0 +1,9 @@
+# in 
+/etc/netplan/01-netcfg.yaml
+
+# update
+  ethernets:
+    eno1:
+      set-name: eth1
+      match:
+        macaddress: 04:d4:c4:39:40:fa
