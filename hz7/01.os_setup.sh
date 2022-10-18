@@ -29,7 +29,8 @@ sudo apt-get update
 sudo apt-get install helm
 
 #RKE
-wget https://github.com/rancher/rke/releases/download/v1.3.12/rke_linux-amd64
+wget https://github.com/rancher/rke/releases/download/v1.3.15/rke_linux-amd64
 mv rke_linux-amd64 rke
 chmod +x rke
 sudo mv rke /usr/local/bin
+rke config --list-version --all
