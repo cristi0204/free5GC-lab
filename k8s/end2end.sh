@@ -45,4 +45,13 @@ sleep 5
 echo
 echo
 
+figlet UERANSIM
+pushd 35.ueransim
+    bash 01.ue-install.sh
+popd
+kubectl wait --for=condition=Ready pods --all -n free5gc
+sleep 5
+echo
+echo
 
+kubectl get po -n free5gc -o wide
