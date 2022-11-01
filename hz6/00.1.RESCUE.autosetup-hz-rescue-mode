@@ -35,7 +35,7 @@ SWRAIDLEVEL 1
 ## which hostname should be set?
 ##
 
-HOSTNAME aos6
+HOSTNAME aos3
 ## ================
 ##  NETWORK CONFIG:
 ## ================
