@@ -122,7 +122,8 @@ services:
     win_extra_env: []
 network:
   plugin: flannel
-  options: {}
+  options:
+    flannel_iface: "eth0"
   mtu: 0
   node_selector: {}
   update_strategy: null
