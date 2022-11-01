@@ -1,14 +1,30 @@
 # If you intended to deploy Kubernetes in an air-gapped environment,
 # please consult the documentation on how to configure custom RKE images.
 nodes:
-- address: aos3
+- address: aos4
   port: "22"
-  internal_address: aos3
+  internal_address: aos4
   role:
   - controlplane
   - worker
   - etcd
-  hostname_override: aos3
+  hostname_override: aos4
+  user: root
+  docker_socket: /var/run/docker.sock
+  ssh_key: ""
+  ssh_key_path: ~/.ssh/id_rsa
+  ssh_cert: ""
+  ssh_cert_path: ""
+  labels: {}
+  taints: []
+- address: aos6
+  port: "22"
+  internal_address: aos6
+  role:
+  - controlplane
+  - worker
+  - etcd
+  hostname_override: aos6
   user: root
   docker_socket: /var/run/docker.sock
   ssh_key: ""
