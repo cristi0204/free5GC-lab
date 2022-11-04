@@ -1,0 +1,1 @@
+helm upgrade --install --debug --namespace fluentd-sm fluentd-sm ./helm -f values.yaml
