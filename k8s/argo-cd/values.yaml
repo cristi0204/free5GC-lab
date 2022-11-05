@@ -1100,7 +1100,7 @@ server:
     ## Hostnames must be provided if Ingress is enabled.
     ## Secrets must be manually created in the namespace
     hosts:
-      - argocd.berlindevops.com
+      - argocd.5g.berlindevops.com
 
     # -- List of ingress paths
     paths:
@@ -1127,7 +1127,7 @@ server:
     tls:
       - secretName: argocd-tls
         hosts:
-           - argocd.berlindevops.com
+           - argocd.5g.berlindevops.com
 
     # -- Uses `server.service.servicePortHttps` instead `server.service.servicePortHttp`
     https: false
@@ -1221,7 +1221,7 @@ server:
   # @default -- See [values.yaml]
   config:
     # Argo CD's externally facing base URL (optional). Required when configuring SSO
-    url: "https://argocd.berlindevops.com"
+    url: "https://argocd.5g.berlindevops.com"
     # Argo CD instance label key
     application.instanceLabelKey: argocd.argoproj.io/instance
 
@@ -1238,16 +1238,16 @@ server:
     #     url: https://argoproj.github.io/argo-helm
     #     name: argo
 
-    oidc.config: |
-       name: Keycloak
-       issuer: https://keycloak.berlindevops.com/realms/master
-       clientID: argocd
-       clientSecret: $oidc.keycloak.clientSecret
-       requestedScopes:
-         - openid
-         - profile
-         - email
-         - groups
+    # oidc.config: |
+    #   #  name: Keycloak
+    #   #  issuer: https://keycloak.berlindevops.com/realms/master
+    #   #  clientID: argocd
+    #   #  clientSecret: $oidc.keycloak.clientSecret
+    #   #  requestedScopes:
+    #   #    - openid
+    #   #    - profile
+    #   #    - email
+    #   #    - groups
 
   # -- Annotations to be added to Argo CD ConfigMap
   configAnnotations: {}
@@ -1920,8 +1920,8 @@ configs:
     ## Custom secrets. Useful for injecting SSO secrets into environment variables.
     ## Ref: https://argoproj.github.io/argo-cd/operator-manual/sso/
     ## Note that all values must be non-empty.
-    extra:
-      oidc.keycloak.clientSecret: t2sWziELali4r00KMez7P2pZMEqj83Ly
+    extra: ""
+      # oidc.keycloak.clientSecret: t2sWziELali4r00KMez7P2pZMEqj83Ly
 
     # -- Argo TLS Data
     argocdServerTlsConfig:
