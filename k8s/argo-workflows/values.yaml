@@ -370,7 +370,7 @@ server:
   # -- Run the argo server in "secure" mode. Configure this value instead of `--secure` in extraArgs.
   ## See the following documentation for more details on secure mode:
   ## https://argoproj.github.io/argo-workflows/tls/
-  secure: false
+  secure: true 
 
   # -- Extra environment variables to provide to the argo-server container
   extraEnv: []
@@ -384,7 +384,7 @@ server:
   #   - gateway authentication through some other service such as KeyCloak
   # uncomment the lines below and comment out the default empty list `extraArgs: []` above:
   # extraArgs:
-   - --auth-mode=sso
+   - --auth-mode=tls
 
   # -- Additional volume mounts to the server main container.
   volumeMounts: []
@@ -436,7 +436,7 @@ server:
       #     - argoworkflows.example.com
       - secretName: argoworkflows-tls-certificate
         hosts:
-           - argoworkflows.berlindevops.com
+           - argoworkflows.5g.berlindevops.com
 
   clusterWorkflowTemplates:
     # -- Create a ClusterRole and CRB for the server to access ClusterWorkflowTemplates.
