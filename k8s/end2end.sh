@@ -16,7 +16,7 @@ pushd 10.longhorn
     bash 02.add_longhorn_helm_repo.sh
     bash 03.update.sh 
 popd
-kubectl wait --for=condition=Ready pods --all -n longhorn-system
+kubectl wait --for=condition=Ready pods --timeout=80s --all -n longhorn-system
 kubectl get all -n longhorn-system
 echo
 echo
@@ -36,7 +36,7 @@ echo
 figlet IP TABELS
     bash 25.iptables-config.sh
 
-    kubectl wait --for=condition=Ready pod -l k8s-app=kube-dns -n kube-system
+    kubectl wait --for=condition=Ready pod --timeout=80s -l k8s-app=kube-dns -n kube-system
     sleep 5
     echo
     echo
@@ -55,7 +55,7 @@ figlet UERANSIM
 pushd 35.ueransim
     bash 03.ue-update.sh
 popd
-kubectl wait --for=condition=Ready pods --all -n free5gc
+kubectl wait --for=condition=Ready pods --timeout=250s --all -n free5gc
 sleep 5
 echo
 echo
