@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ueransim
+spec:
+  destination:
+    name: ''
+    namespace: free5gc
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: k8s/35.ueransim
+    repoURL: 'https://gitlab.com/atosnet/cluster-5g.git'
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - ./values.yaml
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
