@@ -55,9 +55,9 @@ webui:
     pullPolicy: Always
   service:
     name: webui-service
-    type: ClusterIP
+    type: NodePort
     port: 5000
-    nodePort: ""    
+    nodePort: "30500"    
   configmap:
     name: webui-configmap
   volume:
