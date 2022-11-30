@@ -63,7 +63,7 @@ global:
     excludeIP: 10.100.50.246
   n6network:
     name: n6network
-    masterIf: eth1
+    masterIf: eno1
     subnetIP: 10.100.100.0
     cidr: 24
     gatewayIP: 10.100.100.1
