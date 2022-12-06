@@ -10,15 +10,16 @@
 # Author: Abderaouf KHICHANE, Ilhem FAJJARI, Ayoub BOUSSELMI
 # Software description: An open-source project providing Helm charts to deploy 5G components (Core + RAN) on top of Kubernetes
 #
+.Values.ui.ingress.enabled
 {{- with .Values.webui }}
 {{- if .ingress.enabled -}}
 {{- $fullName := .service.name -}}
 {{- $svcPort := .service.port -}}
-#{{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
+{{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
 apiVersion: networking.k8s.io/v1beta1
-#{{- else -}}
-#apiVersion: extensions/v1beta1
-#{{- end }}
+{{- else -}}
+apiVersion: extensions/v1beta1
+{{- end }}
 kind: Ingress
 metadata:
   name: {{ $fullName }}
