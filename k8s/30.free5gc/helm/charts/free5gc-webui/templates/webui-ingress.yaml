@@ -10,7 +10,7 @@
 # Author: Abderaouf KHICHANE, Ilhem FAJJARI, Ayoub BOUSSELMI
 # Software description: An open-source project providing Helm charts to deploy 5G components (Core + RAN) on top of Kubernetes
 #
-#.Values.webui.ingress.enabled
+.Values.webui.ingress.enabled
 {{- with .Values.webui }}
 {{- if .ingress.enabled -}}
 {{- $fullName := .service.name -}}
