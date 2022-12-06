@@ -97,17 +97,18 @@ webui:
     targetCPUUtilizationPercentage: 80
     # targetMemoryUtilizationPercentage: 80
   ingress:
-    enabled: false
+    enabled: true
     annotations: {}
+    ingressClassName: "nginx"
       # kubernetes.io/ingress.class: nginx
       # kubernetes.io/tls-acme: "true"
     hosts:
-      - host: chart-example.local
-        paths: []
-    tls: []
-    #  - secretName: chart-example-tls
-    #    hosts:
-    #      - chart-example.local
+      - host: ui.5g.berlindevops.com
+        paths: /
+    tls: 
+      - secretName: ui-tls
+        hosts:
+          - ui.5g.berlindevops.com
   configuration:
     # the kind of log output
     # debugLevel: how detailed to output, value: trace, debug, info, warn, error, fatal, panic
