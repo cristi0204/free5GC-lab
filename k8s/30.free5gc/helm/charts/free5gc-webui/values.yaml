@@ -57,7 +57,7 @@ webui:
     name: webui-service
     type: ClusterIP
     port: 5000
-    nodePort: "3"    
+    nodePort: ""    
   configmap:
     name: webui-configmap
   volume:
