@@ -3,7 +3,7 @@
 nodes:
 - address: aos7
   port: "22"
-  internal_address: aos7
+  internal_address: 10.200.1.107
   role:
   - controlplane
   - worker
