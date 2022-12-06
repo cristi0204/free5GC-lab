@@ -97,7 +97,7 @@ webui:
     targetCPUUtilizationPercentage: 80
     # targetMemoryUtilizationPercentage: 80
   ingress:
-    enabled: true
+    enabled: false
     annotations: {}
     ingressClassName: "nginx"
       # kubernetes.io/ingress.class: nginx
