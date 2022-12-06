@@ -99,16 +99,16 @@ webui:
   ingress:
     enabled: false
     annotations: {}
-    ingressClassName: "nginx"
+    #ingressClassName: "nginx"
       # kubernetes.io/ingress.class: nginx
       # kubernetes.io/tls-acme: "true"
     hosts:
-      - host: webui.5g.berlindevops.com
-        paths: /
-    tls: 
-      - secretName: webui-tls
-        hosts:
-          - webui.5g.berlindevops.com
+      - host: 
+        paths: []
+    tls: []
+     # - secretName: webui-tls
+      #  hosts:
+       #   - webui.5g.berlindevops.com
   configuration:
     # the kind of log output
     # debugLevel: how detailed to output, value: trace, debug, info, warn, error, fatal, panic
